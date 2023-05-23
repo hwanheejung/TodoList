@@ -1,0 +1,76 @@
+:root{
+    --black1: #232323;
+    --black2: #2E2E2E;
+    --black3: #383838;
+    --white: #fff;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black1);
+}
+.container{
+    width: 1400px;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 10%;
+    color: var(--white);
+    font-size: 24px;
+    position: relative;
+}
+header h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.header-account{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.header-account::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 3px solid var(--white); 
+    left: 50%; top: 10px;
+    transform: translateX(-50%);  
+}
+.header-account::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    border: 3px solid var(--white);
+    bottom: 2px;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    left: 50%;
+    transform: translateX(-50%);  
+}
+
+section{
+    display: flex;
+    width: 100%;
+    height: 80%;
+}
+.calendar-wrap{
+    width: 45%;
+    height: 100%;
+    background-color: aliceblue;
+}
+.todo-wrap{
+    width: 55%;
+    height: 100%;
+    background-color: antiquewhite;
+}
