@@ -19,6 +19,7 @@ header{
     color: var(--white);
     font-size: 24px;
     position: relative;
+    border-bottom: 3px solid var(--black3);
 }
 header h1{
     position: absolute;
@@ -26,6 +27,14 @@ header h1{
     top: 50%;
     transform: translate(-50%, -50%);
     
+}
+.clock{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    line-height: 50px;
 }
 .header-account{
     width: 50px;
@@ -59,18 +68,172 @@ header h1{
     transform: translateX(-50%);  
 }
 
-section{
+.main{
     display: flex;
     width: 100%;
     height: 80%;
 }
-.calendar-wrap{
+
+.left-wrap{
     width: 45%;
     height: 100%;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .todo-wrap{
     width: 55%;
     height: 100%;
     background-color: antiquewhite;
+}
+.my-account{
+    width: 90%;
+    height: 120px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: var(--white);
+}
+.profile-photo{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background-color: var(--black3);
+    margin-right: 20px;
+}
+.aboutme-box{
+    width: 420px;
+    height: 80px;
+}
+.profile-name{
+    width: 100%;
+    height: 50px;
+    font-size: 28px;
+    line-height: 50px;
+    padding: 0 8px;
+    font-weight: bold;
+}
+.profile-aboutme{
+    width: 100%;
+    height: 30px;
+    padding: 0 8px 5px;
+    font-size: 16px;
+}
+.quote-box{
+    width: 90%;
+    /* height: 150px; */
+    padding: 20px;
+    color: var(--white);
+    border: 3px solid var(--black3);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.quote-box span{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 2px solid var(--black3);
+    padding-bottom: 20px;
+}
+.quote-box .quote{
+    width: 100%;
+    padding: 20px 0;
+    font-size: 20px;
+}
+.quote-box .author{
+    width: 100%;
+    font-size: 16px;
+    padding: 0 20px;
+    text-align: end;
+    
+}
+
+
+/* login */
+.login-container{
+    width: 100%;
+    height: 80%;
+}
+.login-box{
+    width: 500px;
+    height: 700px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 0 20px;
+}
+.login-box .forms{
+    position: relative;
+}
+.forms, .form{
+    width: 100%;
+}
+.login-box .title{
+    width: 100%;
+    height: 100px;
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    line-height: 100px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+.login-box form.login,
+.login-box form.sign_up{
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+}
+.input-field,
+#submitBtn,
+#signup_btn{
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+}
+.input-field input,
+.input-field.button{
+    width: 100%; height: 100%;
+    font-size: 20px;
+}
+.input-field input{
+    padding: 0 20px;
+}
+.checkbox-text{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 20px;
+}
+#submitBtn{
+    font-size: 24px;
+}
+.login_signup{
+    text-align: center;
+    font-size: 20px;
+}
+.login_signup a{
+    color: blue;   
+}
+.login-box.active .sign_up,
+.login-box .login{
+    display: none;
+}
+.login-box .sign_up,
+.login-box.active .login{
+    display: block;
+}
+#re_pw:focus{
+    /* background-color: rgb(246, 132, 132); */
+    outline: none;
+}
+.demo{
+    background-color: rgb(239, 148, 148);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
 }

@@ -12,27 +12,108 @@
     <div class="wrapper flex_center">
         <div class="container">
             <header>
+                <div class="clock">00:00:00</div>
                 <h1>Todo List</h1>
                 <div class="header-account"></div>
             </header>
-            <section>
-                <div class="calendar-wrap">
-                    <div class="my-account"></div>
-                    <div class="calendar">
-                
+            <section class="login-container flex_cc active">
+                <div class="login-box active">
+                    <div class="forms">
+                        <div class="form login">
+                            <span class="title">Log in</span>
+                            <form action="#" id="loginSubmit">
+                                <div class="input-field">
+                                    <input type="email"
+                                            id="useremail" 
+                                            placeholder="Enter your email" required
+                                            autocomplete="off"
+                                    >
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" id="userpw" placeholder="Password" required>
+                                    
+                                </div>
+                                <div class="checkbox-text">
+                                    <div class="checkbox-content">
+                                        <input type="checkbox" id="loginCheck">
+                                        <label for="loginCheck" class="text">Remember Me</label>
+                                    </div>
+                                    <a href="#" class="text">Forgot Password?</a>
+                                </div>
+
+                                <div class="input-field button">
+                                    <input type="submit" value="Login" id="submitBtn">
+                                </div>
+                                <div class="login_signup">
+                                    <span class="text">Not a member? <a href="#" class="sign_btn">Sign up</a></span>
+                                </div>
+                            </form>
+                            <div class="demo">
+                                임시 계정<br> email: test@naver.com <br> password: 12345
+                            </div>
+                        </div>
+                        <div class="form sign_up">
+                            <span class="title">Sign up</span>
+                            <form action="#" id="signupSubmit">
+                                <div class="input-field">
+                                    <input type="text"  id="new_name" 
+                                            autocomplete="off"
+                                            placeholder="Name" required>
+                                    
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" id="new_email" 
+                                         autocomplete="off"
+                                    placeholder="Email" required>
+                                
+                                </div>
+                                
+                                <div class="input-field">
+                                    <input type="password" id="new_pw" placeholder="Password" required>
+                                </div>
+                                <div class="input-field" id="re_pw_div">
+                                    <input type="password" id="re_pw" placeholder="Confirm Password" required>
+                                </div>
+            
+                                <div class="input-field button">
+                                    <input type="submit" value="Sign up" id="signup_btn">
+                                </div>
+                                <div class="login_signup">
+                                    <span class="text">Already a member? <a href="#" class="login_link">Login</a></span>
+                                </div>
+                            </form>  
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main">
+                <div class="left-wrap">
+                    <div class="my-account">
+                        <div class="profile-photo"></div>
+                        <div class="aboutme-box">
+                            <div class="profile-name">Username</div>
+                            <div class="profile-aboutme">Have a nice day!</div>
+                        </div>
+                    </div>
+                    <div class="quote-box">
+                        <span>[오늘의 명언]</span>
+                        <div class="quote"></div>
+                        <div class="author"></div>
+                    </div>
+                    <div class="weather">
+                        
                     </div>
                 </div>
                 <div class="todo-wrap">
                 </div>
             </section>
-            <footer>
-                <div class="footer-home"></div>
-                <div class="footer-account"></div>
-            </footer>
+            
         </div>
     </div>
 
 
-    <link rel="stylesheet" href="./script.js">
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/quotes.js"></script>
 </body>
 </html>
