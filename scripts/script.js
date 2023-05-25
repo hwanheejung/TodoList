@@ -15,7 +15,7 @@ setInterval(getClock, 1000);
 
 
 
-
+// login
 const login_container = document.querySelector('.login-container');
 
 check_login();
@@ -26,18 +26,26 @@ document.querySelector('.login_signup .sign_btn').addEventListener('click', () =
 document.querySelector('.login_signup .login_link').addEventListener('click', () => {
     login_box.classList.add('active');
 })
-
-// login
-
+const testUser = { name : 'test', email : 'test@naver.com', pw : '12345' }; 
 let users = [
-    { name : 'test', email : 'test@naver.com', pw : '12345' },
+    // { name : 'test', email : 'test@naver.com', pw : '12345' }
 ]
 
-check_currUser();
+// 처음 세팅
+if(localStorage.getItem('users') === null){
+    users.push(testUser);
+    localStorage.setItem('users', JSON.stringify(users));    
+}
 
+// 새로고침해도 기존 회원정보 삭제 안됨. 
+existingUsers = JSON.parse(localStorage.getItem('users'));
+if(existingUsers){
+    users = existingUsers;
+}
+
+check_currUser();
 localStorage.setItem('users', JSON.stringify(users));
 users = JSON.parse(localStorage.getItem('users'));
-
 
 loginSubmit.addEventListener('submit', (event)=>{
     event.preventDefault();
