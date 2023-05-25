@@ -37,36 +37,15 @@ header h1{
     line-height: 50px;
 }
 .header-account{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
 }
-.header-account::before{
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 3px solid var(--white); 
-    left: 50%; top: 10px;
-    transform: translateX(-50%);  
-}
-.header-account::after{
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 15px;
-    border: 3px solid var(--white);
-    bottom: 2px;
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-    left: 50%;
-    transform: translateX(-50%);  
-}
+
 
 .main{
     display: flex;
@@ -121,9 +100,9 @@ header h1{
     padding: 0 8px 5px;
     font-size: 16px;
 }
-.quote-box{
+.quote-box,
+.weather-box{
     width: 90%;
-    /* height: 150px; */
     padding: 20px;
     color: var(--white);
     border: 3px solid var(--black3);
@@ -141,15 +120,22 @@ header h1{
     width: 100%;
     padding: 20px 0;
     font-size: 20px;
+    font-style: italic;
 }
 .quote-box .author{
     width: 100%;
     font-size: 16px;
     padding: 0 20px;
-    text-align: end;
-    
+    text-align: end;    
 }
-
+.weather-box span{
+    display: block;
+    font-size: 20px;
+}
+#location{
+    font-size: 30px;
+    text-transform: capitalize;
+}
 
 /* login */
 .login-container{

@@ -34,9 +34,10 @@ let users = [
 ]
 
 check_currUser();
-localStorage.setItem('users', JSON.stringify(users));
 
+localStorage.setItem('users', JSON.stringify(users));
 users = JSON.parse(localStorage.getItem('users'));
+
 
 loginSubmit.addEventListener('submit', (event)=>{
     event.preventDefault();
@@ -45,7 +46,7 @@ loginSubmit.addEventListener('submit', (event)=>{
     const eValue = email.value;
     const pwValue = pw.value;
 
-    const localUsers = JSON.parse(localStorage.getItem('users'))
+    const localUsers = JSON.parse(localStorage.getItem('users'));
     const data = localUsers.find(user => user.email === eValue && user.pw ===  pwValue);
     
     if( data ){
@@ -67,28 +68,31 @@ function check_currUser(){
         login_container.classList.remove('active');
         check_login();
         document.querySelector('.profile-name').innerHTML = cur_data.email;
-        console.log(cur_data);
     }
 }
 
 signupSubmit.addEventListener('submit', (event)=>{
     event.preventDefault();
 
-    password_confirm(); 
-    let new_user = {};
-    new_user.name = new_name.value;
-    new_user.email = new_email.value;
-    new_user.pw = new_pw.value;
-
-    users.push( new_user );
-    localStorage.setItem('users', JSON.stringify(users));
-
-    new_name.value = ''
-    new_email.value = ''
-    new_pw.value = ''
-    re_pw.value = ''
-    login_box.classList.add('active');
-    alert("회원가입이 완료되었습니다. 로그인하세요.");
+    res_pw = password_confirm(); 
+    res_email = email_confirm();
+    if(res_pw === 'success' && res_email === 'success'){
+        let new_user = {};
+        new_user.name = new_name.value;
+        new_user.email = new_email.value;
+        new_user.pw = new_pw.value;
+    
+        users.push( new_user );
+        localStorage.setItem('users', JSON.stringify(users));
+    
+        new_name.value = ''
+        new_email.value = ''
+        new_pw.value = ''
+        re_pw.value = ''
+        login_box.classList.add('active');
+        alert("회원가입이 완료되었습니다. 로그인하세요.");
+    }
+    
 
 })
 
@@ -96,6 +100,7 @@ function check_login(){
     if (login_container.classList.contains('active')){
         document.querySelector('.main').style.display = 'none';
         document.querySelector('.header-account').style.display = 'none';
+        document.querySelector('.login-container').style.display = 'flex';
     }else{
         login_container.style.display = 'none';
         document.querySelector('.main').style.display = 'flex';
@@ -109,8 +114,34 @@ function password_confirm(){
         alert( "비밀번호가 일치하지 않습니다. ");
         new_pw.value = '';
         re_pw.value = '';
+        return 'fail';
     }
+    return 'success';
+}
+function email_confirm(){
+    const localUsers = JSON.parse(localStorage.getItem('users'));
+    const data = localUsers.find(user => user.email === new_email.value);
+    if(data){
+        alert('이미 사용중인 이메일입니다');
+        new_email.value = '';
+        return 'fail';
+    }
+    return 'success';
 }
 
+
+// logout
+document.querySelector('.header-account').addEventListener('click', () => {
+    localStorage.removeItem('currentUser');
+    check_logout();
+})
+
+function check_logout(){
+    const cur_data = JSON.parse(localStorage.getItem('currentUser'));
+    if(cur_data === null){
+        login_container.classList.add('active');
+        check_login();
+    }
+}
 
 
