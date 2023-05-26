@@ -254,7 +254,6 @@ header h1{
 #todo-list li{
     width: 100%;
     display: flex;
-    /* background-color: red; */
     justify-content: center;
     gap: 10px;
 }
