@@ -42,10 +42,10 @@ function paintTodo(newTodo){
             li.remove();
             todos = todos.filter((todo) => todo.id !== parseInt(li.id));
             saveTodos();
+            progression();
         })
     });
     setTimeout(handleCheckTodo, 10);
-    
 }
 
 function handleToDoSubmit(event){
@@ -60,6 +60,7 @@ function handleToDoSubmit(event){
     todos.push(newTodoObj);
     paintTodo(newTodoObj);
     saveTodos();
+    progression();
 }
 
 function paintCheckTodo(){
@@ -72,8 +73,6 @@ function paintCheckTodo(){
             checkBoxes[idx].checked = false;
         }
     })
-
-    
 }
 
 function handleCheckTodo(){
@@ -88,9 +87,9 @@ function handleCheckTodo(){
                 clickedTodo.checked = false;
             }
             saveTodos();
+            progression();
         })
-    })
-    
+    })    
 }
 
 function saveTodos(){
@@ -99,8 +98,6 @@ function saveTodos(){
 
 
 todoForm.addEventListener('submit', handleToDoSubmit);
-
-// setTimeout(handleCheckTodo, 10);
 
 
 const savedTodos = localStorage.getItem(TODOS_KEY);
@@ -111,3 +108,22 @@ if(savedTodos !== null){
     parsedTodos.forEach(paintTodo);
 }
 
+
+// progression bar
+function progression(){
+    const totalNum = todos.length;
+    const doneNum = todos.filter(todo=>todo.checked===true).length;
+    const percentage = ((doneNum / totalNum)*100).toFixed(1);
+
+    const bar_completed = document.querySelector('.bar-completed');
+    
+    if(totalNum === 0){
+        document.querySelector('.percentage strong').innerText = `0.0%`; 
+        bar_completed.style.width = `0%`;   
+    }else{
+        document.querySelector('.percentage strong').innerText = `${percentage}%`;
+        bar_completed.style.width = `${percentage}%`;
+    }
+    
+}
+progression();
