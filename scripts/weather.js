@@ -11,7 +11,7 @@ function onGeoSuccess(position){
         document.querySelector('#temp_minmax').innerText = `max: ${data.main.temp_max}˚C / min: ${data.main.temp_min}˚C`;
     })
 
-    setTimeout(weatherEmoji, 5000);
+    setTimeout(weatherEmoji, 4000);
     
     
     function weatherEmoji(){

@@ -17,6 +17,7 @@ function lightMode() {
 
     document.querySelector('.bar-container').style.backgroundColor = '#fff';
     document.querySelector('.bar-container .bar-completed').style.backgroundColor = 'var(--border)';
+    document.querySelector('.login-box').style.backgroundColor = '#fff';
 }
 function darkMode() {
     getColor();
