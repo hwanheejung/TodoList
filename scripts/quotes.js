@@ -28,9 +28,19 @@ const quotes = [
       {quote: "할 수 있다고 믿는 사람은 그렇게 되고, 할 수 없다고 믿는 사람 역시 그렇게 된다.",
       author: "- 샤를 드골"},
       {quote: "He can do. She can do. Why not me?",
-      author: "- 김태연 TYK그룹 회장"}
-];
+      author: "- 김태연 TYK그룹 회장"},
+      {quote: "Connecting the dots.",
+      author: "- Steve Jobs"}
+    ];
 
-const todaysQuote = quotes[Math.floor(Math.random()*quotes.length)];
-document.querySelector('.quote').innerText = todaysQuote.quote;
-document.querySelector('.author').innerText = todaysQuote.author;
+
+
+function paintQuote(){
+    const todaysQuote = quotes[Math.floor(Math.random()*quotes.length)];
+    document.querySelector('.quote').innerText = todaysQuote.quote;
+    document.querySelector('.author').innerText = todaysQuote.author;    
+}
+
+const refresh = document.querySelector('.quote-box span svg');
+refresh.addEventListener('click', paintQuote);
+paintQuote();

@@ -44,8 +44,8 @@ header h1{
 }
 .theme{
     right: 65px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     fill: var(--color);
 }
 .header-account{
@@ -117,12 +117,36 @@ header h1{
     border-radius: 10px;
     margin-top: 20px;
 }
+.weather-box{
+    position: relative;
+}
+.weatherEmoji{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.weatherEmoji svg{
+    fill: var(--color);
+    stroke-width: 1px;
+}
 .quote-box span{
     display: block;
     width: 100%;
     font-size: 14px;
     border-bottom: 2px solid var(--border);
     padding-bottom: 20px;
+    position: relative;
+}
+.quote-box span svg{
+    width: 30px;
+    height: 30px;
+    fill: var(--color);
+    position: absolute;
+    right: 10px;
+    top: -5px;
 }
 .quote-box .quote{
     width: 100%;

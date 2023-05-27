@@ -14,6 +14,9 @@ function lightMode() {
     theme.classList.remove('dark');
     theme.style.width = '25px';
     theme.style.height = '25px';
+
+    document.querySelector('.bar-container').style.backgroundColor = '#fff';
+    document.querySelector('.bar-container .bar-completed').style.backgroundColor = 'var(--border)';
 }
 function darkMode() {
     getColor();
@@ -23,6 +26,9 @@ function darkMode() {
     theme.style.width = '30px';
     theme.style.height = '30px';
     theme.innerHTML = '<svg id="lightMode" enable-background="new 0 0 32 32" id="Outline" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><g><path d="M16,26c-5.514,0-10-4.486-10-10S10.486,6,16,6s10,4.486,10,10S21.514,26,16,26z M16,8c-4.411,0-8,3.589-8,8s3.589,8,8,8   s8-3.589,8-8S20.411,8,16,8z"/><rect height="4" width="2" x="15"/><rect height="4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.5269 6.1006)" width="2" x="5.101" y="4.101"/><rect height="2" width="4" y="15"/><rect height="2" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -16.5268 11.8995)" width="4" x="4.101" y="24.9"/><rect height="4" width="2" x="15" y="28"/><rect height="4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -10.7279 25.8994)" width="2" x="24.9" y="23.9"/><rect height="2" width="4" x="28" y="15"/><rect height="2" transform="matrix(0.7071 -0.7071 0.7071 0.7071 3.272 20.1005)" width="4" x="23.9" y="5.101"/></g></svg>';
+
+    document.querySelector('.bar-container').style.backgroundColor = 'var(--border)';
+    document.querySelector('.bar-container .bar-completed').style.backgroundColor = '#fff';
 }
 
 theme.addEventListener('click', () => {
@@ -31,6 +37,5 @@ theme.addEventListener('click', () => {
     }else{ // to dark mode
         darkMode();
     }
-
 })
 
