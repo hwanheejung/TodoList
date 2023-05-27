@@ -28,4 +28,10 @@
 
 - [x] localStorage에 사용자별로 todos 저장 (다른 사용자로 로그인하면 해당 사용자 정보 뜨도록)
 
+- [x] 오늘 날짜
+
+- [x] theme
+
+- [ ] logo animation
+
 - [ ] 반응형

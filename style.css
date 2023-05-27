@@ -1,13 +1,12 @@
 :root{
-    --black1: #232323;
-    --black2: #2E2E2E;
-    --black3: #383838;
-    --white: #fff;
+    --background: #232323;
+    --border: #383838;
+    --color: #fff;
 }
 .wrapper{
     width: 100%;
     height: 100vh;
-    background-color: var(--black1);
+    background-color: var(--background);
 }
 .container{
     width: 1000px;
@@ -16,10 +15,10 @@
 header{
     width: 100%;
     height: 10%;
-    color: var(--white);
+    color: var(--color);
     font-size: 18px;
     position: relative;
-    border-bottom: 3px solid var(--black3);
+    border-bottom: 3px solid var(--border);
 }
 header h1{
     position: absolute;
@@ -36,16 +35,24 @@ header h1{
     font-size: 20px;
     line-height: 50px;
 }
+.theme,
 .header-account{
-    width: 25px;
-    height: 25px;
     position: absolute;
-    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
 }
-
+.theme{
+    right: 65px;
+    width: 25px;
+    height: 25px;
+    fill: var(--color);
+}
+.header-account{
+    width: 25px;
+    height: 25px;
+    right: 20px;
+}
 
 .main{
     display: flex;
@@ -73,13 +80,13 @@ header h1{
     display: flex;
     align-items: center;
     padding: 0 10px;
-    color: var(--white);
+    color: var(--color);
 }
 .profile-photo{
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    background-color: var(--black3);
+    background-color: var(--border);
     margin-right: 10px;
 }
 .aboutme-box{
@@ -105,8 +112,8 @@ header h1{
 .weather-box{
     width: 90%;
     padding: 20px;
-    color: var(--white);
-    border: 2px solid var(--black3);
+    color: var(--color);
+    border: 2px solid var(--border);
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -114,7 +121,7 @@ header h1{
     display: block;
     width: 100%;
     font-size: 14px;
-    border-bottom: 2px solid var(--black3);
+    border-bottom: 2px solid var(--border);
     padding-bottom: 20px;
 }
 .quote-box .quote{
@@ -148,7 +155,7 @@ header h1{
     height: 500px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: var(--color);
     padding: 0 20px;
 }
 .login-box .forms{
@@ -234,9 +241,7 @@ header h1{
 }
 #todo-form{ 
     width: 90%;
-    margin-top: 20px;
     padding: 20px;
-
 }
 #todo-form input{
     width: 90%;
@@ -249,10 +254,13 @@ header h1{
     outline: none;
 }
 #todo-list{
-    color: var(--white);
+    color: var(--color);
     width: 90%; 
-    max-height: 300px;
+    max-height: 285px;
     overflow-y : scroll;
+}
+#todo-list::-webkit-scrollbar {
+    display: none; 
 }
 #todo-list li{
     width: 100%;
@@ -268,7 +276,7 @@ header h1{
 #todo-list li input:nth-child(2){
     width: 300px;
     background-color: transparent;
-    color: var(--white);
+    color: var(--color);
     border: none;
     font-size: 16px;
     line-height: 20px;
@@ -284,8 +292,12 @@ header h1{
     height: 20px;
     cursor: pointer;
 }
-.edit svg, .del svg{
-    fill: var(--white);
+.edit svg{
+    fill: var(--color);
+}
+.del svg{
+    stroke: var(--color);
+    fill: none;
 }
 .del svg{
     width: 22px; height: 22px;
@@ -293,12 +305,12 @@ header h1{
 .progression-wrap{
     width: 80%;
     margin-top: 40px;
-    border: 2px solid var(--black3);
+    border: 2px solid var(--border);
     border-radius: 10px;
     padding: 20px 20px 40px 20px;
 }
 .percentage{
-    color: var(--white);
+    color: var(--color);
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
@@ -306,15 +318,25 @@ header h1{
 .bar-container{
     width: 90%;
     height: 20px;
-    background-color: var(--black3);
+    background-color: var(--border);
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
+    border: 1px solid var(--border);
 
 }
 .bar-container .bar-completed{
     height: 100%;
     width: 50%;
-    background-color: var(--white);
+    background-color: #fff;
     transition: 0.5s ease-in-out;
+}
+
+.date-container{
+    width: 90%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0 0 0;
+    font-size: 18px;
+    color: var(--color);
 }
