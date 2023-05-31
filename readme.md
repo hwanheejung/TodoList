@@ -89,6 +89,8 @@ users에 정보가 있으면 로그인이 돼서 currentUser에 정보가 저장
 
 - React가 데이터와 화면의 일치 문제를 수월하게 해결해준다.
 
+- React, Vue, Svelte, Preact, SolidJS 등의 라이브러리가 많지만, 우리나라에서는 React를 가장 많이 쓴다.
+
 <br>
 
 > 2.아쉬운 화면전환
